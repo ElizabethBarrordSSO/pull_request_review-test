@@ -1,0 +1,23 @@
+name: change management
+
+on:
+  
+  pull_request_review:
+    types: [submitted, edited, dismissed]
+  
+  pull_request:
+    types: [opened, reopened]
+  
+
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
