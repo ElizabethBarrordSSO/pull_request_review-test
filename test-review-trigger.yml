@@ -1,14 +1,12 @@
 name: change management
 
 on:
-  
   pull_request_review:
     types: [submitted, edited, dismissed]
-
   workflow_call:
-  
   pull_request:
-    types: [opened, reopened]
+    # The branches below must be a subset of the branches above
+    branches: [ $default-branch ]
   
 
 
